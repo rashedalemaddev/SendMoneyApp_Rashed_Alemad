@@ -4,8 +4,8 @@
 **donwload apk from below link adn use below creds to log in**
 **apk link** : https://drive.google.com/file/d/1IqeGt24N_OMj7EoqpEai9UlIeVl1WjZK/view
 
-## creds
-**user name** = "testuser"
+## Login Credentials
+**username** = "testuser"
 **password** = "password123"
 
 ## overview
