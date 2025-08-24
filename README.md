@@ -10,7 +10,7 @@ This project demonstrates **Clean Architecture, MVVM**, and practical Android de
 **user name** = "testuser"
 **password** = "password123"
 
----
+---  
 
 ##  Screenshots
 <p align="center"><i>✨ Click images to view full-size</i></p>
