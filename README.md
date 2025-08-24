@@ -56,8 +56,8 @@ This project demonstrates **Clean Architecture, MVVM**, and practical Android de
 This app follows **MVVM with Clean Architecture principles**.
 
 ### 🔹 Domain Layer
-- Contains **use cases** and core business logic.  
-- Example: `GetProvidersImpl`, `SendMoneyUseCaseImpl`, `RequestHistoryUseCaseImpl`.
+- Contains **use cases** and core business logic. and models  
+- Example: `GetProvidersImpl`, `SendMoneyUseCaseImpl`, `RequestHistoryUseCaseImpl`.ValidateFormUseCaseImpl
 
 ### 🔹 Data Layer
 - Implements **repositories**, remote & local data sources.  
@@ -72,10 +72,10 @@ This app follows **MVVM with Clean Architecture principles**.
 
 ## ✨ Features
 
-- 🔑 **User Authentication** (Login)  
-- 💸 **Send Money** to providers  
-- 📜 **View Transaction History**  
-- ✅ **Form Validation & Error Handling**  
+- 🔑 **User Authentication** (Login) use thises User Name= testuser  , password = password123
+- 💸 **Send Money** dynamice filed genration bassed on the json data provided  
+- 📜 **View Transaction History**   list of history trsacatino sent useing room db
+- ✅ **Form Validation & Error Handling**   bassed on the json file provided
 - 📱 **Modern UI with Jetpack Compose**  
 - ⚡ **Responsive and Clean Architecture**  
 
