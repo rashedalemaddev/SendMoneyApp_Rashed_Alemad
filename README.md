@@ -3,6 +3,13 @@
 A simple **money transfer Android app** built with **Kotlin & Jetpack Compose**.  
 This project demonstrates **Clean Architecture, MVVM**, and practical Android development skills.
 
+## 🚀 Installation
+**donwload apk from below link adn use below creds to log in**
+**apk link** : https://drive.google.com/file/d/1IqeGt24N_OMj7EoqpEai9UlIeVl1WjZK/view
+
+**user name** = "testuser"
+**password** = "password123"
+
 ---
 
 ##  Screenshots
@@ -54,20 +61,65 @@ This project demonstrates **Clean Architecture, MVVM**, and practical Android de
 ## 🏗 Architecture Overview
 
 This app follows **MVVM with Clean Architecture principles**.
+Architecture
 
-### 🔹 Domain Layer
-- Contains **use cases** and core business logic. and models  
-- Example: `GetProvidersImpl`, `SendMoneyUseCaseImpl`, `RequestHistoryUseCaseImpl`.ValidateFormUseCaseImpl
+This project follows a Clean Architecture approach combined with MVVM (Model-View-ViewModel) and Jetpack Compose for UI, ensuring modularity, testability, and maintainability.
 
-### 🔹 Data Layer
-- Implements **repositories**, remote & local data sources.  
-- Example: `LoginRepositoryImpl`, `RequestHistoryRepositoryImpl`.
+**Layers**
+1. **Presentation Layer (Compose + ViewModel)**
 
-### 🔹 Presentation Layer
-- **UI screens, ViewModels, and state management**.  
-- Example: `LoginScreen`, `SendMoneyScreen`, `RequestsHistoryScreen`.  
-- Built with **Kotlin + Jetpack Compose**.  
+Utilizes Jetpack Compose for declarative UI.
 
+ViewModels hold UI state via StateFlow and handle user events.
+
+Observes domain/use case results and exposes state to the UI.
+
+Handles screen navigation and side effects (e.g., Toast, SnackBar, navigation events).
+
+2. **Domain Layer (Use Cases / Business Logic)**
+
+Encapsulates all business rules and validation logic.
+
+Defines Use Cases (interactors) for actions like login, fetching request history, or validating input.
+
+Independent of Android framework or implementation details.
+
+Returns results in a functional style using Arrow Core Either to represent success/failure.
+
+3. **Data Layer (Repository + Remote/Local Sources)**
+
+Repository interfaces defined in the domain layer and implemented here.
+
+Fetches data from remote APIs (Retrofit) and local sources (Room / DataStore).
+
+Maps DTOs to domain models and handles caching when necessary.
+
+Abstracts data sources so the domain layer remains unaware of implementation details.
+
+**Additional Patterns & Tools**
+**Room Database** : is sued to save request of send money and display history 
+
+**Dependency Injection**: Hilt provides repositories, use cases, and ViewModels in a clean and testable way.
+
+**State Managemen**t: MutableStateFlow / StateFlow is used in ViewModels for reactive UI updates.
+
+**Error Handling**: Functional Either types separate success and failure paths for login .
+
+**Form Validation**: Validation logic resides in the domain/use-case layer to maintain separation of concerns.
+
+**Navigation**: Jetpack Compose Navigation handles screen transitions with proper back-stack management.
+
+**Theming**: Material 3 with custom color schemes ensures a consistent UI experience.
+
+**Benefits**
+
+Clear separation of concerns between UI, business logic, and data sources.
+
+Simplified unit testing of ViewModels and use cases.
+
+Scalable architecture: new features can be added without tightly coupling components.
+
+Reactive and declarative UI using Jetpack Compose.
 ---
 
 ## ✨ Features
@@ -82,7 +134,10 @@ This app follows **MVVM with Clean Architecture principles**.
 ---
 
 ## 🚀 Installation
+**run the app and use creds**
+**user name** = "testuser"
+**password** = "password123"
 
-1. Clone the repository:
-   ```bash
+1. **Clone the repository**:
+  
    git clone https://github.com/rashedalemaddev/SendMoneyApp_Rashed_Alemad.git
