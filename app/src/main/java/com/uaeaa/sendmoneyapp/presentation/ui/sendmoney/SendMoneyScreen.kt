@@ -1,6 +1,7 @@
 package com.uaeaa.sendmoneyapp.presentation.ui.sendmoney
 
 import android.util.Log
+import android.widget.Toast
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -38,17 +39,15 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.focus.onFocusChanged
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.platform.LocalLayoutDirection
-import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.LayoutDirection
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavHostController
-import com.uaeaa.sendmoneyapp.domain.Field
-import com.uaeaa.sendmoneyapp.domain.Lang
-import com.uaeaa.sendmoneyapp.domain.UIFormField
+import com.uaeaa.sendmoneyapp.domain.models.Lang
+import com.uaeaa.sendmoneyapp.domain.models.UIFormField
 import com.uaeaa.sendmoneyapp.presentation.ui.CustomTopBar
 import com.uaeaa.sendmoneyapp.presentation.viewmodels.SendMoneyViewModel
 
@@ -59,6 +58,7 @@ fun SendMoneyScreen(
 ) {
     val state by viewModel.state.collectAsState()
     val rtl = state.lang == Lang.AR
+    var context=   LocalContext.current
 
     val eventFlow = viewModel.event
     LaunchedEffect(key1 = true) {
@@ -71,6 +71,8 @@ fun SendMoneyScreen(
                 }
 
                 is SendMoneyEvent.Error -> {
+                    Toast.makeText(context, event.message, Toast.LENGTH_SHORT).show()
+
                     Log.e("SendMoney", event.message)
                 }
             }

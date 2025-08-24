@@ -1,11 +1,13 @@
 package com.uaeaa.sendmoneyapp.presentation
 
-import com.uaeaa.sendmoneyapp.domain.Field
-import com.uaeaa.sendmoneyapp.domain.FieldType
-import com.uaeaa.sendmoneyapp.domain.UIFormField
+import android.util.Log
+import com.uaeaa.sendmoneyapp.domain.models.Field
+import com.uaeaa.sendmoneyapp.domain.models.FieldType
+import com.uaeaa.sendmoneyapp.domain.models.UIFormField
 
 fun List<Field>.toUIFormFields(): List<UIFormField> {
     return this.map { field ->
+        Log.d("validationishere", "toUIFormFields: ${field.validationErrorMessage} ")
         when (field.type) {
             FieldType.Text -> UIFormField.Text(
                 name = field.name,

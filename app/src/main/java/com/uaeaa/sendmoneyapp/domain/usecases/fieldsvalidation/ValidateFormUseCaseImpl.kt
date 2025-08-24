@@ -1,6 +1,6 @@
-package com.uaeaa.sendmoneyapp.domain.usecases
+package com.uaeaa.sendmoneyapp.domain.usecases.fieldsvalidation
 
-import com.uaeaa.sendmoneyapp.domain.UIFormField
+import com.uaeaa.sendmoneyapp.domain.models.UIFormField
 
 class ValidateFormUseCaseImpl() : IValidateFormUseCase {
     override suspend fun ValidateFromFileds(
@@ -23,25 +23,25 @@ class ValidateFormUseCaseImpl() : IValidateFormUseCase {
 
     private fun validateText(f: UIFormField.Text, v: String): String? {
         if (f.regex.isNullOrBlank()) {
-            return if (v.isBlank()) "${f.label} is required" else null
+            return if (v.isBlank()) "${f.validationErrorMessage}" else null
         }
         val ok = runCatching { Regex(f.regex).matches(v) }.getOrDefault(false)
 
-        return if (!ok) "${f.label} is invalid" else null
+        return if (!ok)  if(!f.validationErrorMessage.isNullOrBlank()){ f.validationErrorMessage}else {"${f.label} is invalid"} else null
     }
 
     private fun validateNumber(f: UIFormField.Number, v: String): String? {
-        if (v.isBlank()) return "${f.label} is required"
-        if (v.toBigDecimalOrNull() == null) return "${f.label} must be numeric"
+        if (v.isBlank()) return "${f.validationErrorMessage}"
+        if (v.toBigDecimalOrNull() == null) return if(!f.validationErrorMessage.isNullOrBlank()){ f.validationErrorMessage}else {"${f.label} must be numeric"}
         if (!f.regex.isNullOrBlank()) {
             val ok = runCatching { Regex(f.regex).matches(v) }.getOrDefault(false)
-            if (!ok) return "${f.label} is invalid"
+            if (!ok) return if(!f.validationErrorMessage.isNullOrBlank()){ f.validationErrorMessage}else {"${f.label} is invalid"}
         }
         return null
     }
 
     private fun validateOption(f: UIFormField.Option, v: String): String? {
-        if (v.isBlank()) return "${f.label} is required"
+        if (v.isBlank()) return if(!f.validationErrorMessage.isNullOrBlank()){ f.validationErrorMessage}else {"${f.label} is required"}
         val allowed = f.options.any { it.second == v }
         return if (!allowed) "${f.label} has invalid value" else null
     }

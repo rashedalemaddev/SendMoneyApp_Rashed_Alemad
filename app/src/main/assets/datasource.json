@@ -1,7 +1,7 @@
 {
   "title": {
     "en": "Send Money",
-    "ar": " لاوملأا لاسرإ "
+    "ar": " ارسال الاموال"
   },
   "services": [
     {
@@ -17,7 +17,7 @@
             {
               "label": {
                 "en": "Amount (AED)",
-                "ar": " مھرد( غلبملا )"
+                "ar": " المبلغ بالدرهم"
               },
               "name": "amount",
               "placeholder": "0.00",
@@ -29,7 +29,7 @@
             {
               "label": {
                 "en": "Bank Account Number",
-                "ar": " يفرصملا باسحلا مقر "
+                "ar": "رقم الحساب المصرفي "
               },
               "name": "bank_account_number",
               "placeholder": null,
@@ -41,7 +41,7 @@
             {
               "label": {
                 "en": "First name",
-                "ar": " لولأا مسلاا "
+                "ar": "الاسم الاول  "
               },
               "name": "firstname",
               "placeholder": "Please enter first name",
@@ -53,7 +53,7 @@
             {
               "label": {
                 "en": "Last name",
-                "ar": " ةلئاعلا مسا "
+                "ar": " اسم العائله "
               },
               "name": "lastname",
               "placeholder": "Please enter last name",
@@ -71,7 +71,7 @@
             {
               "label": {
                 "en": "Amount (AED)",
-                "ar": " مھرد( غلبملا )"
+                "ar": " المبلغ( الدرهم )"
               },
               "name": "amount",
               "placeholder": "0.00",
@@ -83,7 +83,7 @@
             {
               "label": {
                 "en": "Bank Account Number",
-                "ar": " يفرصملا باسحلا مقر "
+                "ar": "رقم الحساب المصرفي "
               },
               "name": "bank_account_number",
               "placeholder": null,
@@ -95,25 +95,25 @@
             {
               "label": {
                 "en": "Full Name",
-                "ar": " لماكلا مسلاا "
+                "ar": "الاسم الكامل"
               },
               "name": "full_name",
               "placeholder": {
                 "en": "Enter full name",
-                "ar": " لماكلا مسلاا لخدأ "
+                "ar": " ادخل الاسم الكامل "
               },
               "type": "text",
               "validation": "^[\\s\\S]*",
               "max_length": 250,
               "validation_error_message": {
                 "en": "Full name is required",
-                "ar": " بولطم لماكلا مسلاا "
+                "ar": " الاسم الكامل مطلوب "
               }
             },
             {
               "label": {
                 "en": "Province State",
-                "ar": " ةراملإا "
+                "ar": " الاماره "
               },
               "name": "province_state",
               "placeholder": null,
@@ -141,7 +141,7 @@
             {
               "label": {
                 "en": "Amount (AED)",
-                "ar": " مھرد( غلبملا )"
+                "ar": " المبلغ( الدرهم )"
               },
               "name": "amount",
               "placeholder": "0.00",
@@ -153,7 +153,7 @@
             {
               "label": {
                 "en": "Bank Account Number",
-                "ar": " يفرصملا باسحلا مقر "
+                "ar": " رقم الحساب المصرفي "
               },
               "name": "bank_account_number",
               "placeholder": null,
@@ -165,7 +165,7 @@
             {
               "label": {
                 "en": "Date of Birth (YYYY-MM-DD)",
-                "ar": " ةنس-رھش-موی( دلایملا خیرات )"
+                "ar": " (تاريخ الميلاد ( يوم-شهر-سنه"
               },
               "name": "date_of_birth",
               "placeholder": "YYYY-MM-DD",
@@ -177,7 +177,7 @@
             {
               "label": {
                 "en": "Gender",
-                "ar": " سنجلا "
+                "ar": " الجنس "
               },
               "name": "gender",
               "placeholder": null,
@@ -205,7 +205,7 @@
             {
               "label": {
                 "en": "Amount (AED)",
-                "ar": " مھرد( غلبملا )"
+                "ar": " المبلغ( الدرهم )"
               },
               "name": "amount",
               "placeholder": "0.00",
@@ -217,7 +217,7 @@
             {
               "label": {
                 "en": "Bank Account Number",
-                "ar": " يفرصملا باسحلا مقر "
+                "ar": " رقم الحساب المصرفي "
               },
               "name": "bank_account_number",
               "placeholder": null,
@@ -229,7 +229,7 @@
             {
               "label": {
                 "en": "Last name",
-                "ar": " ةلئاعلا مسا "
+                "ar": "اسم العائله "
               },
               "name": "lastname",
               "placeholder": "Please enter last name",
@@ -241,7 +241,7 @@
             {
               "label": {
                 "en": "Gender",
-                "ar": " سنجلا "
+                "ar": " الجنس "
               },
               "name": "gender",
               "placeholder": null,
@@ -269,7 +269,7 @@
             {
               "label": {
                 "en": "Amount (AED)",
-                "ar": " مھرد( غلبملا )"
+                "ar": " المبلغ( الدرهم )"
               },
               "name": "amount",
               "placeholder": "0.00",
@@ -281,7 +281,7 @@
             {
               "label": {
                 "en": "Bank Account Number",
-                "ar": " يفرصملا باسحلا مقر "
+                "ar": " رقم الحساب المصرفي "
               },
               "name": "bank_account_number",
               "placeholder": null,
@@ -293,7 +293,7 @@
             {
               "label": {
                 "en": "Last name",
-                "ar": " ةلئاعلا مسا "
+                "ar": " اسم العائله "
               },
               "name": "lastname",
               "placeholder": "Please enter last name",
@@ -319,7 +319,7 @@
             {
               "label": {
                 "en": "Amount (AED)",
-                "ar": " مھرد( غلبملا )"
+                "ar": "المبلغ( الدرهم )"
               },
               "name": "amount",
               "placeholder": "0.00",
@@ -331,7 +331,7 @@
             {
               "label": {
                 "en": "Mobile Number",
-                "ar": " كرحتملا فتاھلا مقر "
+                "ar": " رقم الموبايل "
               },
               "name": "msisdn",
               "placeholder": null,
@@ -343,7 +343,7 @@
             {
               "label": {
                 "en": "First name",
-                "ar": " لولأا مسلاا "
+                "ar": "الاسم الاول "
               },
               "name": "firstname",
               "placeholder": "Please enter first name",
@@ -355,7 +355,7 @@
             {
               "label": {
                 "en": "Last name",
-                "ar": " ةلئاعلا مسا "
+                "ar": " اسم العائله "
               },
               "name": "lastname",
               "placeholder": "Please enter last name",
@@ -373,7 +373,7 @@
             {
               "label": {
                 "en": "Amount (AED)",
-                "ar": " مھرد( غلبملا )"
+                "ar": " المبلغ( الدرهم )"
               },
               "name": "amount",
               "placeholder": "0.00",
@@ -385,7 +385,7 @@
             {
               "label": {
                 "en": "Mobile Number",
-                "ar": " كرحتملا فتاھلا مقر "
+                "ar": " رقم الهاتف المتحرك "
               },
               "name": "msisdn",
               "placeholder": null,
@@ -397,25 +397,25 @@
             {
               "label": {
                 "en": "Full Name",
-                "ar": " لماكلا مسلاا "
+                "ar": " اسم العائله "
               },
               "name": "full_name",
               "placeholder": {
                 "en": "Enter full name",
-                "ar": " لماكلا مسلاا لخدأ "
+                "ar": " ادخل الاسم الاول  "
               },
               "type": "text",
               "validation": "^[\\s\\S]*",
               "max_length": 250,
               "validation_error_message": {
                 "en": "Full name is required",
-                "ar": " بولطم لماكلا مسلاا "
+                "ar": " الاسم الاول مطلوب "
               }
             },
             {
               "label": {
                 "en": "Gender",
-                "ar": " سنجلا "
+                "ar": " الجنس "
               },
               "name": "gender",
               "placeholder": null,
@@ -443,7 +443,7 @@
             {
               "label": {
                 "en": "Amount (AED)",
-                "ar": " مھرد( غلبملا )"
+                "ar": " المبلغ( الدرهم )"
               },
               "name": "amount",
               "placeholder": "0.00",
@@ -455,7 +455,7 @@
             {
               "label": {
                 "en": "Mobile Number",
-                "ar": " كرحتملا فتاھلا مقر "
+                "ar": " رقم الهاتف المتحرك "
               },
               "name": "msisdn",
               "placeholder": null,
@@ -467,7 +467,7 @@
             {
               "label": {
                 "en": "Province State",
-                "ar": " ةراملإا "
+                "ar": " الاماره "
               },
               "name": "province_state",
               "placeholder": null,
@@ -493,19 +493,19 @@
             {
               "label": {
                 "en": "Full Name",
-                "ar": " لماكلا مسلاا "
+                "ar": " الاسم الكامل "
               },
               "name": "full_name",
               "placeholder": {
                 "en": "Enter full name",
-                "ar": " لماكلا مسلاا لخدأ "
+                "ar": "ادخل الاسم الكامل "
               },
               "type": "text",
               "validation": "^[\\s\\S]*",
               "max_length": 250,
               "validation_error_message": {
                 "en": "Full name is required",
-                "ar": " بولطم لماكلا مسلاا "
+                "ar": "الاسم الكامل مطلوب  "
               }
             }
           ]
@@ -517,7 +517,7 @@
             {
               "label": {
                 "en": "Amount (AED)",
-                "ar": " مھرد( غلبملا )"
+                "ar": " المبلغ( الدرهم )"
               },
               "name": "amount",
               "placeholder": "0.00",
@@ -529,7 +529,7 @@
             {
               "label": {
                 "en": "Mobile Number",
-                "ar": " كرحتملا فتاھلا مقر "
+                "ar": " رقم الهاتف المتحرك "
               },
               "name": "msisdn",
               "placeholder": null,
@@ -541,19 +541,19 @@
             {
               "label": {
                 "en": "Full Name",
-                "ar": " لماكلا مسلاا "
+                "ar": " الاسم الكامل "
               },
               "name": "full_name",
               "placeholder": {
                 "en": "Enter full name",
-                "ar": " لماكلا مسلاا لخدأ "
+                "ar": "ادخل الاسم الكامل "
               },
               "type": "text",
               "validation": "^[\\s\\S]*",
               "max_length": 250,
               "validation_error_message": {
                 "en": "Full name is required",
-                "ar": " بولطم لماكلا مسلاا "
+                "ar": " الاسم الكامل مطلوب "
               }
             }
           ]
@@ -565,7 +565,7 @@
             {
               "label": {
                 "en": "Amount (AED)",
-                "ar": " مھرد( غلبملا )"
+                "ar": " المبلغ( الدرهم )"
               },
               "name": "amount",
               "placeholder": "0.00",
@@ -577,7 +577,7 @@
             {
               "label": {
                 "en": "Mobile Number",
-                "ar": " كرحتملا فتاھلا مقر "
+                "ar": "رقم الهاتف المتحرك "
               },
               "name": "msisdn",
               "placeholder": null,
@@ -589,7 +589,7 @@
             {
               "label": {
                 "en": "Date of Birth (YYYY-MM-DD)",
-                "ar": " ةنس-رھش-موی( دلایملا خیرات )"
+                "ar": " تاريخ الميلاد (يوم-شهر-سنه)"
               },
               "name": "date_of_birth",
               "placeholder": "YYYY-MM-DD",

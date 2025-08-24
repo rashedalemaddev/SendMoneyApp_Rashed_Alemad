@@ -1,3 +1,5 @@
+package com.uaeaa.sendmoneyapp.data.models
+
 import kotlinx.serialization.KSerializer
 import kotlinx.serialization.Serializable
 import kotlinx.serialization.descriptors.PrimitiveKind

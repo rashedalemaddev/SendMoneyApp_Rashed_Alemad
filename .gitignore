@@ -11,6 +11,11 @@
 .DS_Store
 /kotlin/
 /.idea/
+# Ignore screenshots folder
+/screenshots/
+
+# Ignore local README (optional, usually you want to keep README tracked)
+README.md
 
 # Build outputs
 /build/

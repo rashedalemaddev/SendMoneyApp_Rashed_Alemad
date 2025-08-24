@@ -1,18 +1,21 @@
 package com.uaeaa.sendmoneyapp.data.reposiotry.sendmoneyreposiotry
 
 import android.content.Context
-import android.util.Log
-import com.uaeaa.sendmoneyapp.data.ConfigDto
+import arrow.core.Either
+import com.uaeaa.sendmoneyapp.data.models.ConfigDto
 import com.uaeaa.sendmoneyapp.data.datasource.local.historyrequest.RequestHistoryLocalDataSoruce
 import com.uaeaa.sendmoneyapp.data.models.RequestHistoryEntity
-import com.uaeaa.sendmoneyapp.data.toDomain
-import com.uaeaa.sendmoneyapp.domain.Field
-import com.uaeaa.sendmoneyapp.domain.Provider
-import com.uaeaa.sendmoneyapp.domain.Service
-import kotlinx.coroutines.flow.flow
+import com.uaeaa.sendmoneyapp.data.models.toDomain
+import com.uaeaa.sendmoneyapp.domain.models.Failure
+import com.uaeaa.sendmoneyapp.domain.models.Field
+import com.uaeaa.sendmoneyapp.domain.models.Provider
+import com.uaeaa.sendmoneyapp.domain.models.Service
 import kotlinx.serialization.json.Json
 
-class SendMoneyReposiotryImpl(val context: Context, val requestHistoryLocalDataSoruce: RequestHistoryLocalDataSoruce) : ISendMoneyReposiotry {
+class SendMoneyReposiotryImpl(
+    val context: Context,
+    val requestHistoryLocalDataSoruce: RequestHistoryLocalDataSoruce
+) : ISendMoneyReposiotry {
     val json = Json {
         ignoreUnknownKeys = true
     }
@@ -27,44 +30,82 @@ class SendMoneyReposiotryImpl(val context: Context, val requestHistoryLocalDataS
         return cachedConfig!!
     }
 
-    override suspend fun loadConfig(): ConfigDto {
-        Log.d("loadingjson", "loadConfig: ${getConfig()}")
-        return getConfig()
-    }
-
-    override suspend fun getServices(lang: String): List<Service> {
-        Log.d("loadingjson", "loadConfig(lang).services: ${loadConfig().services}")
-
-        return loadConfig().toDomain(lang).services
+    override suspend fun loadConfig(): Either<Failure, ConfigDto> {
+        return try {
+            Either.Right(getConfig())
+        } catch (e: Exception) {
+            Either.Left(Failure("Failed to load config"))
+        }
 
     }
 
-    override suspend fun getProviders(lan: String, serviceName: String): List<Provider> {
-        return loadConfig()
-            .services
-            .firstOrNull { it.name == serviceName }
-            ?.providers
-            ?.map { it.toDomain(lan) }
-            ?: emptyList()
+    override suspend fun getServices(lang: String): Either<Failure, List<Service>> {
+        return try {
+            val serives = loadConfig().fold(
+                ifLeft = { return Either.Left(it) },
+                ifRight = { it.toDomain(lang).services }
+            )
+            Either.Right(serives)
+        } catch (e: Exception) {
+            Either.Left(Failure("Faluied to load "))
+        }
+
+    }
+
+    override suspend fun getProviders(
+        lan: String,
+        serviceName: String
+    ): Either<Failure, List<Provider>> {
+        return try {
+            val providers = loadConfig().fold(
+                ifLeft = { return Either.Left(it) },
+                ifRight = {
+                    it.services
+                        .firstOrNull { it.name == serviceName }
+                        ?.providers
+                        ?.map { it.toDomain(lan) }
+                        ?: emptyList()
+                }
+            )
+            Either.Right(providers)
+
+        } catch (e: Exception) {
+            Either.Left(Failure("Failed to get providers"))
+        }
+
+
     }
 
     override suspend fun getFormFields(
         lang: String,
         serviceName: String,
         providerId: String
-    ): List<Field> {
-        val provider = getConfig().services
-            .firstOrNull { it.name == serviceName }
-            ?.providers
-            ?.firstOrNull { it.id == providerId } ?: return emptyList()
+    ): Either<Failure, List<Field>> {
 
-        // Build localized schema
-
-       return provider.required_fields.map { it.toDomain(lang)}?: emptyList()
+        return try {
+            val fields = loadConfig().fold(
+                ifLeft = { return Either.Left(it) },
+                ifRight = { config ->
+                    val provider = config.services
+                        .firstOrNull { it.name == serviceName }
+                        ?.providers
+                        ?.firstOrNull { it.id == providerId } ?: return Either.Right(emptyList())
+                    provider.required_fields.map { it.toDomain(lang) }
+                }
+            )
+            Either.Right(fields)
+        } catch (e: Exception) {
+            Either.Left(Failure("Failed to get form fields"))
+        }
     }
 
-    override suspend fun sendRequest(requestHistoryEntity: RequestHistoryEntity) {
-        requestHistoryLocalDataSoruce.insertRequest(requestHistoryEntity)
+    override suspend fun sendRequest(requestHistoryEntity: RequestHistoryEntity): Either<Failure, Unit> {
+        return try {
+            requestHistoryLocalDataSoruce.insertRequest(requestHistoryEntity)
+            Either.Right(Unit)
+        } catch (e: Exception) {
+            Either.Left(Failure("Failed to send request"))
+        }
 
     }
 }

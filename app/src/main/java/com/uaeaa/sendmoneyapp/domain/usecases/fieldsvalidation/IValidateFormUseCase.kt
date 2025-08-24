@@ -1,7 +1,6 @@
-package com.uaeaa.sendmoneyapp.domain.usecases
+package com.uaeaa.sendmoneyapp.domain.usecases.fieldsvalidation
 
-import com.uaeaa.sendmoneyapp.domain.Field
-import com.uaeaa.sendmoneyapp.domain.UIFormField
+import com.uaeaa.sendmoneyapp.domain.models.UIFormField
 
 interface IValidateFormUseCase {
     data class Result(val isValid: Boolean, val errors: Map<String, String?>)

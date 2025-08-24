@@ -1,8 +1,8 @@
 package com.uaeaa.sendmoneyapp.presentation.ui.sendmoney
 
-import com.uaeaa.sendmoneyapp.domain.Lang
+import com.uaeaa.sendmoneyapp.domain.models.Lang
 
-import com.uaeaa.sendmoneyapp.domain.UIFormField
+import com.uaeaa.sendmoneyapp.domain.models.UIFormField
 
 data class SendMoneyState(
     val lang: Lang = Lang.EN,

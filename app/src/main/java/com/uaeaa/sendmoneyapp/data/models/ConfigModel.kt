@@ -1,14 +1,12 @@
-package com.uaeaa.sendmoneyapp.data
+package com.uaeaa.sendmoneyapp.data.models
 
-import MaxLength
 import android.util.Log
-import androidx.compose.ui.text.toLowerCase
-import com.uaeaa.sendmoneyapp.domain.Config
-import com.uaeaa.sendmoneyapp.domain.Field
-import com.uaeaa.sendmoneyapp.domain.FieldType
-import com.uaeaa.sendmoneyapp.domain.Option
-import com.uaeaa.sendmoneyapp.domain.Provider
-import com.uaeaa.sendmoneyapp.domain.Service
+import com.uaeaa.sendmoneyapp.domain.models.Config
+import com.uaeaa.sendmoneyapp.domain.models.Field
+import com.uaeaa.sendmoneyapp.domain.models.FieldType
+import com.uaeaa.sendmoneyapp.domain.models.Option
+import com.uaeaa.sendmoneyapp.domain.models.Provider
+import com.uaeaa.sendmoneyapp.domain.models.Service
 import kotlinx.serialization.Serializable
 
 
@@ -73,7 +71,6 @@ fun ProviderDto.toDomain(lang: String): Provider {
 fun FieldDto.toDomain(lang: String): Field {
 
     val resolvedLabel = label[lang] ?: label["en"].orEmpty()
-    Log.d("toDomaingfiledlabe", "toDomain:  ${resolvedLabel}  lang is $lang")
 
     Log.d("toDomain", "toDomain:  label is ${resolvedLabel}")
 
@@ -90,10 +87,10 @@ fun FieldDto.toDomain(lang: String): Field {
     }
     val resolvedValidationMessage: String? = when (validation_error_message) {
         is ValidationMessage.Text -> validation_error_message.value
-        is ValidationMessage.Localized -> validation_error_message.map[lang] ?: validation_error_message.map["en"]
+        is ValidationMessage.Localized -> validation_error_message.map[lang]
+            ?: validation_error_message.map["en"]
         else -> null
     }
-
     val resolvedOptions = options?.map { Option(it.label, it.name) }
 val type = when (type.lowercase()) {
     "number" -> FieldType.Number

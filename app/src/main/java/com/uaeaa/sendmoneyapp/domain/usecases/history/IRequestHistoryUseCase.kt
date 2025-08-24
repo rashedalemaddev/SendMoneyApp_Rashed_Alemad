@@ -1,4 +1,4 @@
-package com.uaeaa.sendmoneyapp.domain.usecases
+package com.uaeaa.sendmoneyapp.domain.usecases.history
 
 import com.uaeaa.sendmoneyapp.data.models.RequestHistoryEntity
 import kotlinx.coroutines.flow.Flow

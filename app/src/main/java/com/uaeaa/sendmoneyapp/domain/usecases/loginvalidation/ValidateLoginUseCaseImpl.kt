@@ -1,4 +1,4 @@
-package com.uaeaa.sendmoneyapp.domain.usecases
+package com.uaeaa.sendmoneyapp.domain.usecases.loginvalidation
 
 
 class ValidateLoginUseCaseImpl : IValidateLoginUseCase {

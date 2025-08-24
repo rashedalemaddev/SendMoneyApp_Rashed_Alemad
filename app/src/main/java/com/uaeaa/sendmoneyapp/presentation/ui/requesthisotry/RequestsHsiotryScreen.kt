@@ -54,29 +54,7 @@ fun RequestsHsiotryScreen(
                 title = "Requests History ",
                 backgroundColor = MaterialTheme.colorScheme.primary,
                 actions = {
-                    /* Language switch button
-                    TextButton(onClick = {
-                        val newLang = if (state.lang == Lang.EN) Lang.AR else Lang.EN
-                        viewModel.onLanguageChange(newLang)
-                    }) {
-                        Text(
-                            if (state.lang == Lang.EN) "عربي" else "EN",
-                            color = MaterialTheme.colorScheme.onPrimary,
-                            style = MaterialTheme.typography.labelLarge
-                        )
-                    }
-                    // View Requests History button
-                    IconButton(onClick = {
-                        navController.navigate("requests_history")
-                    }) {
-                        Icon(
-                            imageVector = Icons.Default.List,
-                            contentDescription = "View Requests",
-                            tint = MaterialTheme.colorScheme.onPrimary
-                        )
-                    }
-*/
-                }, onBackClick = {navController.popBackStack()}, showBackButton = true
+            }, onBackClick = {navController.popBackStack()}, showBackButton = true
 
 
 
@@ -99,6 +77,14 @@ fun RequestsHsiotryScreen(
                     contentAlignment = Alignment.Center
                 ) {
                     Text("No requests found")
+                }
+            }
+            !uiState.error.isNullOrBlank() -> {
+                Box(
+                    modifier = Modifier.fillMaxSize(),
+                    contentAlignment = Alignment.Center
+                ) {
+                    Text("something went wrong")
                 }
             }
 

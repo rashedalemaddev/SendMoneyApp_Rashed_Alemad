@@ -1,19 +1,11 @@
 package com.uaeaa.sendmoneyapp.presentation.viewmodels
 
-import android.util.Log
-import androidx.compose.runtime.MutableState
-import androidx.compose.runtime.getValue
-import androidx.compose.runtime.mutableStateOf
-import androidx.compose.runtime.setValue
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.uaeaa.sendmoneyapp.domain.Service
-import com.uaeaa.sendmoneyapp.domain.usecases.IGetServiceUseCase
-import com.uaeaa.sendmoneyapp.domain.usecases.ILoginUseCase
-import com.uaeaa.sendmoneyapp.domain.usecases.IValidateLoginUseCase
+import com.uaeaa.sendmoneyapp.domain.usecases.login.ILoginUseCase
+import com.uaeaa.sendmoneyapp.domain.usecases.loginvalidation.IValidateLoginUseCase
 import com.uaeaa.sendmoneyapp.presentation.ui.login.LoginFormState
 import com.uaeaa.sendmoneyapp.presentation.ui.login.LoginState
-import com.uaeaa.sendmoneyapp.presentation.ui.sendmoney.DropdownItem
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.MutableStateFlow
@@ -74,7 +66,8 @@ class LoginViewModel @Inject constructor(
 
     fun onLoginClicked() = viewModelScope.launch {
         _loginState.value = LoginState.Loading
-        delay(2000)
+        // to simulate loading api request
+        delay(1000)
         if (isFormValid.value) {
 
 
@@ -83,7 +76,7 @@ class LoginViewModel @Inject constructor(
                 loginFormState.value.password
             ).fold(
                 ifLeft = { error ->
-                    _loginState.value = LoginState.Error(error ?: "Unknown error")
+                    _loginState.value = LoginState.Error(error.message ?: "Unknown error")
                 },
                 ifRight = {
                     _loginState.value = LoginState.Success

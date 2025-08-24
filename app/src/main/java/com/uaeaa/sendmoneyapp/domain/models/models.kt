@@ -1,4 +1,4 @@
-package com.uaeaa.sendmoneyapp.domain
+package com.uaeaa.sendmoneyapp.domain.models
 
 // Domain models (pure Kotlin)
 data class Config(
