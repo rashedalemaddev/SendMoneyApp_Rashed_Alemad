@@ -28,7 +28,7 @@ This project demonstrates clean architecture, MVVM, and practical Android develo
 
 ## Demo Video
 
-[<img src="screenshots/video_thumbnail.png" alt="Watch Demo" width="300"/>](videos/demo.mp4)
+[<img src="screenshots/Screenshot_20250824_141052.jpg" alt="Watch Demo" width="300"/>](screenshots/SVID_20250824_173138_1.mp4)
 
 *Click the thumbnail to watch the demo video.*
 
