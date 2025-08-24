@@ -1,11 +1,11 @@
-# 💸 SendMoneyApp
+#  SendMoneyApp
 
 A simple **money transfer Android app** built with **Kotlin & Jetpack Compose**.  
 This project demonstrates **Clean Architecture, MVVM**, and practical Android development skills.
 
 ---
 
-## 📸 Screenshots
+##  Screenshots
 <p align="center"><i>✨ Click images to view full-size</i></p>
 <p align="center">
   <img src="screenshots/Screenshot_20250824_141052.jpg" alt="Login Screen" width="250"/>
