@@ -4,10 +4,11 @@
 **donwload apk from below link adn use below creds to log in**
 **apk link** : https://drive.google.com/file/d/1IqeGt24N_OMj7EoqpEai9UlIeVl1WjZK/view
 
+## creds
 **user name** = "testuser"
 **password** = "password123"
 
-
+## overview
 A simple **money transfer Android app** built with **Kotlin & Jetpack Compose**.  
 This project demonstrates **Clean Architecture, MVVM**, and practical Android development skills.
 
