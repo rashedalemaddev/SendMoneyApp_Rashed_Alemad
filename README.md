@@ -7,24 +7,28 @@ This project demonstrates **Clean Architecture, MVVM**, and practical Android de
 
 ## 📸 Screenshots
 
-p align="center">
-  <img src="screenshots/Screenshot_20250824_141052.jpg" alt="Login Screen" width="250" style="margin: 10px;"/>
-  <img src="screenshots/Screenshot_20250824_141114.jpg" alt="Login Screen" width="250" style="margin: 10px;"/>
-  <img src="screenshots/Screenshot_20250824_141141.jpg" alt="Login Screen" width="250" style="margin: 10px;"/>
+<p align="center">
+  <img src="screenshots/Screenshot_20250824_141052.jpg" alt="Login Screen" width="250"/>
+  <img src="screenshots/Screenshot_20250824_141114.jpg" alt="Login Screen" width="250"/>
+  <img src="screenshots/Screenshot_20250824_141141.jpg" alt="Login Screen" width="250"/>
 </p>
-<br/>
 
 <p align="center">
-  <img src="screenshots/Screenshot_20250824_141158.jpg" alt="Dashboard" width="250" style="margin: 10px;"/>
-  <img src="screenshots/Screenshot_20250824_141218.jpg" alt="Profile" width="250" style="margin: 10px;"/>
-  <img src="screenshots/Screenshot_20250824_141231.jpg" alt="Settings" width="250" style="margin: 10px;"/>
+  <img src="screenshots/Screenshot_20250824_141145.jpg" alt="Dashboard" width="250"/>
+  <img src="screenshots/Screenshot_20250824_141153.jpg" alt="Send Money" width="250"/>
+  <img src="screenshots/Screenshot_20250824_141159.jpg" alt="Providers List" width="250"/>
 </p>
-<br/>
 
 <p align="center">
-  <img src="screenshots/Screenshot_20250824_141243.jpg" alt="Feature A" width="250" style="margin: 10px;"/>
-  <img src="screenshots/Screenshot_20250824_141259.jpg" alt="Feature B" width="250" style="margin: 10px;"/>
-  <img src="screenshots/Screenshot_20250824_141312.jpg" alt="Feature C" width="250" style="margin: 10px;"/>
+  <img src="screenshots/Screenshot_20250824_141206.jpg" alt="Form Validation" width="250"/>
+  <img src="screenshots/Screenshot_20250824_141211.jpg" alt="Confirmation" width="250"/>
+  <img src="screenshots/Screenshot_20250824_141233.jpg" alt="Request History" width="250"/>
+</p>
+
+<p align="center">
+  <img src="screenshots/Screenshot_20250824_141239.jpg" alt="History Details" width="250"/>
+  <img src="screenshots/Screenshot_20250824_141246.jpg" alt="Settings" width="250"/>
+  <img src="screenshots/Screenshot_20250824_141304.jpg" alt="Logout" width="250"/>
 </p>
 
 <p align="center"><i>✨ Click images to view full-size</i></p>
