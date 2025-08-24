@@ -1,11 +1,23 @@
-# 💸 SendMoneyApp
+# 🚀 Send Money App
 
-A simple **money transfer Android app** built with **Kotlin & Jetpack Compose**.  
-This project demonstrates **Clean Architecture, MVVM**, and practical Android development skills.
+A modern money transfer application built with **Kotlin** and **Jetpack Compose**, following **Clean Architecture** and **SOLID principles**.  
+This app provides a smooth, secure, and scalable way to send money with a beautiful UI and modular architecture.
 
 ---
 
-## 📸 Screenshots
+## ✨ Features
+- 🔐 **User Authentication** (Login & Signup)
+- 💸 **Send & Receive Money**
+- 🌍 **Currency Conversion**
+- 📊 **Transaction History**
+- 👤 **Profile Management**
+- ⚡ **Modern UI with Jetpack Compose**
+- 🧩 **Clean Architecture (MVVM + UseCases + Repository pattern)**
+- 📦 **Hilt Dependency Injection**
+
+---
+
+## 📱 Screenshots
 
 <p align="center">
   <img src="screenshots/Screenshot_20250824_141052.jpg" alt="Login Screen" width="250" style="margin: 10px;"/>
@@ -25,54 +37,15 @@ This project demonstrates **Clean Architecture, MVVM**, and practical Android de
   <img src="screenshots/Screenshot_20250824_141312.jpg" alt="Feature C" width="250" style="margin: 10px;"/>
 </p>
 
-<p align="center"><i>✨ Click images to view full-size</i></p>
-
 ---
 
 ## 🎥 Demo Video
 
-<p align="center">
-  <a href="https://drive.google.com/file/d/1dHluUua4I2djH5uBd52s_nXoIze1IzWt/view">
-    <img src="screenshots/Screenshot_20250824_141052.jpg" alt="Watch Demo" width="300"/>
-  </a>
-</p>
-
-<p align="center"><i>Click the thumbnail to watch the demo video</i></p>
+[![Watch the video](screenshots/demo-thumbnail.jpg)](https://github.com/your-username/your-repo/assets/your-video-id)
 
 ---
 
-## 🏗 Architecture Overview
+## 🏛️ Architecture
 
-This app follows **MVVM with Clean Architecture principles**.
+This project follows **Clean Architecture** with separation of concerns:  
 
-### 🔹 Domain Layer
-- Contains **use cases** and core business logic.  
-- Example: `GetProvidersImpl`, `SendMoneyUseCaseImpl`, `RequestHistoryUseCaseImpl`.
-
-### 🔹 Data Layer
-- Implements **repositories**, remote & local data sources.  
-- Example: `LoginRepositoryImpl`, `RequestHistoryRepositoryImpl`.
-
-### 🔹 Presentation Layer
-- **UI screens, ViewModels, and state management**.  
-- Example: `LoginScreen`, `SendMoneyScreen`, `RequestsHistoryScreen`.  
-- Built with **Kotlin + Jetpack Compose**.  
-
----
-
-## ✨ Features
-
-- 🔑 **User Authentication** (Login)  
-- 💸 **Send Money** to providers  
-- 📜 **View Transaction History**  
-- ✅ **Form Validation & Error Handling**  
-- 📱 **Modern UI with Jetpack Compose**  
-- ⚡ **Responsive and Clean Architecture**  
-
----
-
-## 🚀 Installation
-
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/rashedalemaddev/SendMoneyApp_Rashed_Alemad.git
