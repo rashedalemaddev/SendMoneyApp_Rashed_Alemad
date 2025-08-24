@@ -14,9 +14,12 @@ import com.uaeaa.sendmoneyapp.domain.usecases.ISendMoneyUseCase
 import com.uaeaa.sendmoneyapp.domain.usecases.IValidateFormUseCase
 import com.uaeaa.sendmoneyapp.presentation.toUIFormFields
 import com.uaeaa.sendmoneyapp.presentation.ui.sendmoney.DropdownItem
+import com.uaeaa.sendmoneyapp.presentation.ui.sendmoney.SendMoneyEvent
 import com.uaeaa.sendmoneyapp.presentation.ui.sendmoney.SendMoneyState
 import dagger.hilt.android.lifecycle.HiltViewModel
+import kotlinx.coroutines.flow.MutableSharedFlow
 import kotlinx.coroutines.flow.MutableStateFlow
+import kotlinx.coroutines.flow.SharedFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
@@ -32,6 +35,10 @@ class SendMoneyViewModel @Inject constructor(
 ) : ViewModel() {
     private val _state = MutableStateFlow(SendMoneyState())
     val state: StateFlow<SendMoneyState> = _state
+
+    private val _event = MutableSharedFlow<SendMoneyEvent>() // one-time events
+    val event: SharedFlow<SendMoneyEvent> = _event
+
 
     init {
         viewModelScope.launch {
@@ -114,6 +121,8 @@ if(serviceName==_state.value.selectedService){
         )
         iSendMoneyUseCase.sendMoneyUseCase(requestEntity)
         _state.update { it.copy(toast = if (s.lang == Lang.AR) "تم الحفظ" else "Saved") }
+
+        _event.emit(SendMoneyEvent.Success)
     }
 
     fun onToastShown() = _state.update { it.copy(toast = null) }

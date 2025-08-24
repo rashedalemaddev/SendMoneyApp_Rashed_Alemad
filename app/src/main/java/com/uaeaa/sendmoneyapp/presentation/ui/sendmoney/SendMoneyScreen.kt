@@ -2,17 +2,16 @@ package com.uaeaa.sendmoneyapp.presentation.ui.sendmoney
 
 import android.util.Log
 import androidx.compose.foundation.background
-import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.imePadding
 import androidx.compose.foundation.layout.padding
+
 import androidx.compose.foundation.rememberScrollState
-import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.List
@@ -31,6 +30,7 @@ import androidx.compose.material3.Text
 import androidx.compose.material3.TextButton
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.CompositionLocalProvider
+import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
@@ -38,6 +38,7 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.focus.onFocusChanged
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalLayoutDirection
 import androidx.compose.ui.text.style.TextAlign
@@ -58,10 +59,29 @@ fun SendMoneyScreen(
 ) {
     val state by viewModel.state.collectAsState()
     val rtl = state.lang == Lang.AR
+
+    val eventFlow = viewModel.event
+    LaunchedEffect(key1 = true) {
+        eventFlow.collect { event ->
+            when (event) {
+                SendMoneyEvent.Success -> {
+                    navController.navigate("requests_history") {
+
+                    }
+                }
+
+                is SendMoneyEvent.Error -> {
+                    Log.e("SendMoney", event.message)
+                }
+            }
+        }
+    }
     Scaffold(
+        modifier = Modifier.imePadding(),
+
         topBar = {
             CustomTopBar(
-                title =if(!rtl) "Send Money" else "ارسال الاموال",
+                title = if (!rtl) "Send Money" else "ارسال الاموال",
                 backgroundColor = MaterialTheme.colorScheme.primary,
                 actions = {
                     // Language switch button
@@ -96,7 +116,8 @@ fun SendMoneyScreen(
             Box(
                 modifier = Modifier
                     .fillMaxSize()
-                    .background(color = MaterialTheme.colorScheme.background),
+                    .background(color = MaterialTheme.colorScheme.background)
+                    .imePadding(),
                 contentAlignment = Alignment.Center,
             ) {
                 Column(
@@ -104,6 +125,7 @@ fun SendMoneyScreen(
                         .fillMaxSize()
                         .verticalScroll(rememberScrollState())
                         .padding(16.dp)
+                        .imePadding()
                 ) {
 
 
@@ -137,21 +159,27 @@ fun SendMoneyScreen(
                         errors = state.errors,
                         onValueChange = viewModel::onFieldChanged
                     )
-                    Spacer(Modifier.height(80.dp))
+                    Spacer(modifier = Modifier.height(80.dp))
+
 
                 }
+
                 if (state.selectedService != null && state.selectedProviderId != null) {
                     Button(
                         onClick = { viewModel.onSubmit() },
                         modifier = Modifier
                             .align(Alignment.BottomCenter)
                             .fillMaxWidth()
-                            .padding(16.dp),
+                            .padding(16.dp)
+                            .imePadding(),
                         shape = MaterialTheme.shapes.medium
                     ) {
-                        Text(if(!rtl)"Send" else "ارسال")
+                        Text(if (!rtl) "Send" else "ارسال")
                     }
+
                 }
+
+
             }
         }
     }
@@ -202,7 +230,11 @@ private fun FieldText(
     error: String?,
     onValueChange: (String, String) -> Unit
 ) {
-    Column(modifier = Modifier.fillMaxWidth()) {
+
+
+    Column(modifier = Modifier
+        .fillMaxWidth()
+       ) {
         // Label
         Spacer(Modifier.height(16.dp))
         Text(
@@ -230,7 +262,8 @@ private fun FieldText(
             singleLine = true,
             modifier = Modifier
 
-                .fillMaxWidth(), colors = OutlinedTextFieldDefaults.colors(
+                .fillMaxWidth()
+                , colors = OutlinedTextFieldDefaults.colors(
                 unfocusedBorderColor = Color.Transparent, // remove border
                 focusedBorderColor = Color.Transparent,   // remove border
                 disabledBorderColor = Color.Transparent,
@@ -246,6 +279,7 @@ private fun FieldText(
             color = MaterialTheme.colorScheme.error,
             style = MaterialTheme.typography.bodySmall
         )
+
     }
 }
 
