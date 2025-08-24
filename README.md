@@ -12,13 +12,13 @@ This project demonstrates **Clean Architecture, MVVM**, and practical Android de
   <img src="screenshots/Screenshot_20250824_141114.jpg" alt="Login Screen" width="250"/>
   <img src="screenshots/Screenshot_20250824_141141.jpg" alt="Login Screen" width="250"/>
 </p>
-
+<br/>
 <p align="center">
   <img src="screenshots/Screenshot_20250824_141145.jpg" alt="Dashboard" width="250"/>
   <img src="screenshots/Screenshot_20250824_141153.jpg" alt="Send Money" width="250"/>
   <img src="screenshots/Screenshot_20250824_141159.jpg" alt="Providers List" width="250"/>
 </p>
-
+<br/>
 <p align="center">
   <img src="screenshots/Screenshot_20250824_141206.jpg" alt="Form Validation" width="250"/>
   <img src="screenshots/Screenshot_20250824_141211.jpg" alt="Confirmation" width="250"/>
